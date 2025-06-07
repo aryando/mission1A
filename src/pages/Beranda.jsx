@@ -23,7 +23,7 @@ export default function Beranda() {
             <div className="course-grid">
                 <div className="course-card">
                     <img src="./images/kelas/kelas1.png" alt="course" className="course-img"/>
-                    <div className="className-content">
+                    <div className="content">
                             <h6 className="title">Big 4 Auditor Financial Analyst</h6>
                             <div className="avatar">
                                 <img src="./images/avatar/avatar1.png" alt="avatar" className="avatar-img"/>
@@ -46,7 +46,7 @@ export default function Beranda() {
             <div className="course-grid">
                 <div className="course-card">
                     <img src="./images/kelas/kelas2.png" alt="course" className="course-img"/>
-                    <div className="className-content">
+                    <div className="content">
                             <h6 className="title">Big 4 Auditor Financial Analyst</h6>
                             <div className="avatar">
                                 <img src="./images/avatar/avatar2.png" alt="avatar" className="avatar-img"/>
@@ -69,7 +69,7 @@ export default function Beranda() {
             <div className="course-grid">
                 <div className="course-card">
                     <img src="./images/kelas/kelas3.png" alt="course" className="course-img"/>
-                    <div className="className-content">
+                    <div className="content">
                             <h6 className="title">Big 4 Auditor Financial Analyst</h6>
                             <div className="avatar">
                                 <img src="./images/avatar/avatar3.png" alt="avatar" className="avatar-img"/>
@@ -92,7 +92,7 @@ export default function Beranda() {
             <div className="course-grid">
                 <div className="course-card">
                     <img src="./images/kelas/kelas4.png" alt="course" className="course-img"/>
-                    <div className="className-content">
+                    <div className="content">
                             <h6 className="title">Big 4 Auditor Financial Analyst</h6>
                             <div className="avatar"></div>
                                 <img src="./images/avatar/avatar4.png" alt="avatar" className="avatar-img"/>
@@ -115,7 +115,7 @@ export default function Beranda() {
             <div className="course-grid">
                 <div className="course-card">
                     <img src="./images/kelas/kelas5.png" alt="course" className="course-img"/>
-                    <div className="className-content">
+                    <div className="content">
                             <h6 className="title">Big 4 Auditor Financial Analyst</h6>
                             <div className="avatar">
                                 <img src="./images/avatar/avatar5.png" alt="avatar" className="avatar-img"/>
@@ -138,7 +138,7 @@ export default function Beranda() {
             <div className="course-grid">
                 <div className="course-card">
                     <img src="./images/kelas/kelas6.png" alt="course" className="course-img"/>
-                    <div className="className-content">
+                    <div className="content">
                             <h6 className="title">Big 4 Auditor Financial Analyst</h6>
                             <div className="avatar">
                                 <img src="./images/avatar/avatar6.png" alt="avatar" className="avatar-img"/>
@@ -161,7 +161,7 @@ export default function Beranda() {
             <div className="course-grid">
                 <div className="course-card">
                     <img src="./images/kelas/kelas7.png" alt="course" className="course-img"/>
-                    <div className="className-content">
+                    <div className="content">
                             <h6 className="title">Big 4 Auditor Financial Analyst</h6>
                             <div className="avatar">
                                 <img src="./images/avatar/avatar7.png" alt="avatar" className="avatar-img"/>
@@ -184,7 +184,7 @@ export default function Beranda() {
             <div className="course-grid">
                 <div className="course-card">
                     <img src="./images/kelas/kelas8.png" alt="course" className="course-img"/>
-                    <div className="className-content">
+                    <div className="content">
                             <h6 className="title">Big 4 Auditor Financial Analyst</h6>
                             <div className="avatar">
                                 <img src="./images/avatar/avatar8.png" alt="avatar" className="avatar-img"/>
@@ -207,7 +207,7 @@ export default function Beranda() {
             <div className="course-grid">
                 <div className="course-card">
                     <img src="./images/kelas/kelas9.png" alt="course" className="course-img"/>
-                    <div className="className-content">
+                    <div className="content">
                             <h6 className="title">Big 4 Auditor Financial Analyst</h6>
                             <div className="avatar">
                                 <img src="./images/avatar/avatar9.png" alt="avatar" className="avatar-img"/>
@@ -276,11 +276,11 @@ export default function Beranda() {
                     </ul>
                 </div>
             </div>
-            <div className="socialMedia">
-                <button type="button"><i className="fa-brands fa-linkedin-in"></i></button>
-                <button type="button"><i className="fa-brands fa-facebook-f"></i></button>
-                <button type="button"><i className="fa-brands fa-instagram"></i></button>
-                <button type="button"><i className="fa-brands fa-twitter"></i></button>
+            <div className="social-media">
+                <button type="button" className="btn-sc"><i className="fa-brands fa-linkedin-in"></i></button>
+                <button type="button" className="btn-sc"><i className="fa-brands fa-facebook-f"></i></button>
+                <button type="button" className="btn-sc"><i className="fa-brands fa-instagram"></i></button>
+                <button type="button" className="btn-sc"><i className="fa-brands fa-twitter"></i></button>
             </div>
             <p className="copyright">©2023 Gerobak Sayur All rights reserved.</p>  
         </footer>
