@@ -1,43 +1,93 @@
 import Header from "../components/Header";
+import FormInput from "../components/FormInput";
+import FormSelect from "../components/FormSelect";
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 export default function Register() {
+    const navigate = useNavigate();
+    const {
+        register,
+        handleSubmit,
+        watch,
+        formState: { errors },
+    } = useForm();
+    
+    const password = watch("password");
+
+    const onSubmit = (data) => {
+        const accounts = JSON.parse(localStorage.getItem("accounts")) || [];
+        
+        const emailSudahAda = accounts.some(acc => acc.email === data.email);
+        if (emailSudahAda) {
+            alert("Email sudah digunakan!");
+            return;
+        };
+
+        const akunBaru = {
+            nama: data.nama,
+            email: data.email,
+            password: data.password,
+        };
+        
+        accounts.push(akunBaru);
+        localStorage.setItem("accounts", JSON.stringify(accounts));
+
+        alert("Pendaftaran berhasil!");
+        navigate("/login");
+    }
+
+    
     return (
         <>
         <Header />
         <main>
-            <form>
+            <form className="form" onSubmit={handleSubmit(onSubmit)}>
                 <div className="masuk-ke">
                     <h1>Pendaftaran Akun</h1>
                     <p>Yuk, daftarkan akunmu sekarang juga!</p>
                 </div>
                 <div className="form-group">
-                    <div className="nama-lengkap">
-                        <label htmlFor="nama">Nama Lengkap<span className="red-star">*</span></label>
-                        <input type="text" id="nama" name="nama" required placeholder="Masukan Nama Lengkap Anda" />
-                    </div>
-                    <div className="email">
-                        <label htmlFor="email">E-Mail<span className="red-star">*</span></label>
-                        <input type="email" id="email" name="email" required placeholder="Masukan E-Mail Anda" />
-                    </div>
-                    <div className="jenis-kelamin">
-                        <label htmlFor="jenisKelamin">Jenis Kelamin<span className="red-star">*</span></label>
-                        <select id="jenisKelamin" name="jenisKelamin" required>
-                            <option value="pria">Pria</option>
-                            <option value="Wanita">Wanita</option>
-                        </select>
-                    </div>
-                    <div className="phone-group">
-                        <label htmlFor="phone">No.Hp<span className="red-star">*</span></label>
-                        <input type="number" id="phone" name="phone" required placeholder="Masukan No.Hp Anda" />
-                    </div>
-                    <div className="password">
-                        <label htmlFor="password">Kata Sandi<span className="red-star">*</span></label>
-                        <input type="password" id="password" name="password" required placeholder="Masukan Kata Sandi Anda" />
-                    </div>
-                    <div className="konfirmasi-password">
-                        <label htmlFor="konfirmasiPassword">Konfirmasi Kata sandi<span className="red-star">*</span></label>
-                        <input type="password" id="konfirmasiPassword" name="konfirmasiPassword" required placeholder="Konfirmasi Kata Sandi Anda" />
-                    </div>
+                    <FormInput
+                        id="name"
+                        label="Nama Lengkap"
+                        register={register}
+                        errors={errors} />
+                    <FormInput
+                        id="email"
+                        label="E-Mail"
+                        type="email"
+                        register={register}
+                        errors={errors} />
+                    <FormSelect
+                        id="jenisKelamin"
+                        label="Jenis Kelamin"
+                        options={["Laki-Laki", "Perempuan"]}
+                        register={register}
+                        errors={errors} />
+                    <FormInput
+                        id="phone"
+                        label="No. Hp"
+                        type="number"
+                        register={register}
+                        errors={errors} />
+                    <FormInput
+                        id="password"
+                        label="Kata Sandi"
+                        type="password"
+                        register={register}
+                        errors={errors} 
+                        validate={(value) =>
+                            value.length >= 6 || "Kata sandi minimal 6 karakter"
+                        }/>
+                    <FormInput
+                        id="konfirmasiPassword"
+                        label="Konfirmasi kata Sandi"
+                        type="password"
+                        register={register}
+                        errors={errors}
+                        validate={(value) => value === password || "Kata sandi tidak cocok!"}/>
+                        
                     <div className="forgot-password">
                         <button type="button" className="forgot-password">Lupa Password?</button>
                     </div>

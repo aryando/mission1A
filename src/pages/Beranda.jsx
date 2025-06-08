@@ -1,6 +1,90 @@
 import Header from "../components/Header";
+import CourseCard from "../components/CourseCard";
 
 export default function Beranda() {
+    const courses = [
+        {
+            image: "./images/kelas/kelas1.png",
+            title: "Big 4 Auditor Financial Analyst",
+            avatar: "./images/avatar/avatar1.png",
+            name: "Jenna Ortega",
+            role: "Senior Accountant di Gojek",
+            rating: "3.5",
+            price: "Rp. 300K"
+        },
+        {
+            image: "./images/kelas/kelas2.png",
+            title: "Big 4 Auditor Financial Analyst",
+            avatar: "./images/avatar/avatar2.png",
+            name: "Jenna Ortega",
+            role: "Senior Accountant di Gojek",
+            rating: "3.5",
+            price: "Rp. 300K"
+        },
+        {
+            image: "./images/kelas/kelas3.png",
+            title: "Big 4 Auditor Financial Analyst",
+            avatar: "./images/avatar/avatar3.png",
+            name: "Jenna Ortega",
+            role: "Senior Accountant di Gojek",
+            rating: "3.5",
+            price: "Rp. 300K"
+        },
+        {
+            image: "./images/kelas/kelas4.png",
+            title: "Big 4 Auditor Financial Analyst",
+            avatar: "./images/avatar/avatar4.png",
+            name: "Jenna Ortega",
+            role: "Senior Accountant di Gojek",
+            rating: "3.5",
+            price: "Rp. 300K"
+        },
+        {
+            image: "./images/kelas/kelas5.png",
+            title: "Big 4 Auditor Financial Analyst",
+            avatar: "./images/avatar/avatar5.png",
+            name: "Jenna Ortega",
+            role: "Senior Accountant di Gojek",
+            rating: "3.5",
+            price: "Rp. 300K"
+        },
+        {
+            image: "./images/kelas/kelas6.png",
+            title: "Big 4 Auditor Financial Analyst",
+            avatar: "./images/avatar/avatar6.png",
+            name: "Jenna Ortega",
+            role: "Senior Accountant di Gojek",
+            rating: "3.5",
+            price: "Rp. 300K"
+        },
+        {
+            image: "./images/kelas/kelas7.png",
+            title: "Big 4 Auditor Financial Analyst",
+            avatar: "./images/avatar/avatar7.png",
+            name: "Jenna Ortega",
+            role: "Senior Accountant di Gojek",
+            rating: "3.5",
+            price: "Rp. 300K"
+        },
+        {
+            image: "./images/kelas/kelas8.png",
+            title: "Big 4 Auditor Financial Analyst",
+            avatar: "./images/avatar/avatar8.png",
+            name: "Jenna Ortega",
+            role: "Senior Accountant di Gojek",
+            rating: "3.5",
+            price: "Rp. 300K"
+        },
+        {
+            image: "./images/kelas/kelas9.png",
+            title: "Big 4 Auditor Financial Analyst",
+            avatar: "./images/avatar/avatar9.png",
+            name: "Jenna Ortega",
+            role: "Senior Accountant di Gojek",
+            rating      : "3.5",
+            price: "Rp. 300K"
+        }
+    ]
     return (
         <>
         <Header />
@@ -10,224 +94,22 @@ export default function Beranda() {
                 <p>Temukan ilmu baru yang menarik dan mendalam melalui koleksi vidio pembelajaran berkualitas tinggi. Tidak hanya itu, Anda juga dapat berpartisipasi dalam latihan interaktif yang akan meningkatkan pemahaman anda.</p>
                 <button type="button" className="btn-cta">Temukan Video Course untuk Dipelajari!</button> 
             </section>
-                   <section className="courses">
-            <h3>Koleksi Video Pembelajaaran Unggulan</h3>
-            <p>Jelajahi Dunia Pengetahuan Melalui Pilihan Kami!</p>
-            <nav className="category-menu">
-                <button type="button" className="category-link">Semua Kelas</button>
-                <button type="button" className="category-link">Pemasaran</button>
-                <button type="button" className="category-link">Desain</button>
-                <button type="button" className="category-link">Pengembangan Diri</button>
-                <button type="button" className="category-link">Bisnis</button>
-            </nav>
-            <div className="course-grid">
-                <div className="course-card">
-                    <img src="./images/kelas/kelas1.png" alt="course" className="course-img"/>
-                    <div className="content">
-                            <h6 className="title">Big 4 Auditor Financial Analyst</h6>
-                            <div className="avatar">
-                                <img src="./images/avatar/avatar1.png" alt="avatar" className="avatar-img"/>
-                                <div className="avatar-info">
-                                    <div className="name">Jenna Ortega</div>
-                                    <div className="role">Senior Accountant di <bold>Gojek</bold></div>
-                                </div>
-                            </div>
-                        <div className="rating-price">
-                            <div className="rating">
-                                <span className="star">★★★☆☆</span>
-                                <span className="rating">3.5</span>
-                                <span className="count">(86)</span>
-                            </div>
-                            <div className="price">Rp. 300K</div>
-                        </div>
-                    </div>
+            <section className="courses">
+                <h3>Koleksi Video Pembelajaaran Unggulan</h3>
+                <p>Jelajahi Dunia Pengetahuan Melalui Pilihan Kami!</p>
+                <nav className="category-menu">
+                    <button type="button" className="category-link">Semua Kelas</button>
+                    <button type="button" className="category-link">Pemasaran</button>
+                    <button type="button" className="category-link">Desain</button>
+                    <button type="button" className="category-link">Pengembangan Diri</button>
+                    <button type="button" className="category-link">Bisnis</button>
+                </nav>
+                <div className="course-grid">
+                    {courses.map((course, index) => (
+                        <CourseCard key={index} {...course}/>
+                    ))}
                 </div>
-            </div>
-            <div className="course-grid">
-                <div className="course-card">
-                    <img src="./images/kelas/kelas2.png" alt="course" className="course-img"/>
-                    <div className="content">
-                            <h6 className="title">Big 4 Auditor Financial Analyst</h6>
-                            <div className="avatar">
-                                <img src="./images/avatar/avatar2.png" alt="avatar" className="avatar-img"/>
-                                <div className="avatar-info">
-                                    <div className="name">Jenna Ortega</div>
-                                    <div className="role">Senior Accountant di <bold>Gojek</bold></div>
-                                </div>
-                            </div>
-                        <div className="rating-price">
-                            <div className="rating">
-                                <span className="star">★★★☆☆</span>
-                                <span className="rating">3.5</span>
-                                <span className="count">(86)</span>
-                            </div>
-                            <div className="price">Rp. 300K</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="course-grid">
-                <div className="course-card">
-                    <img src="./images/kelas/kelas3.png" alt="course" className="course-img"/>
-                    <div className="content">
-                            <h6 className="title">Big 4 Auditor Financial Analyst</h6>
-                            <div className="avatar">
-                                <img src="./images/avatar/avatar3.png" alt="avatar" className="avatar-img"/>
-                                <div className="avatar-info">
-                                    <div className="name">Jenna Ortega</div>
-                                    <div className="role">Senior Accountant di <bold>Gojek</bold></div>
-                                </div>
-                            </div>
-                        <div className="rating-price">
-                            <div className="rating">
-                                <span className="star">★★★☆☆</span>
-                                <span className="rating">3.5</span>
-                                <span className="count">(86)</span>
-                            </div>
-                            <div className="price">Rp. 300K</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="course-grid">
-                <div className="course-card">
-                    <img src="./images/kelas/kelas4.png" alt="course" className="course-img"/>
-                    <div className="content">
-                            <h6 className="title">Big 4 Auditor Financial Analyst</h6>
-                            <div className="avatar"></div>
-                                <img src="./images/avatar/avatar4.png" alt="avatar" className="avatar-img"/>
-                                <div className="avatar-info">
-                                    <div className="name">Jenna Ortega</div>
-                                    <div className="role">Senior Accountant di <bold>Gojek</bold></div>
-                                
-                            </div>
-                            <div className="rating-price">
-                            <div className="rating">
-                                <span className="star">★★★☆☆</span>
-                                <span className="rating">3.5</span>
-                                <span className="count">(86)</span>
-                            </div>
-                            <div className="price">Rp. 300K</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="course-grid">
-                <div className="course-card">
-                    <img src="./images/kelas/kelas5.png" alt="course" className="course-img"/>
-                    <div className="content">
-                            <h6 className="title">Big 4 Auditor Financial Analyst</h6>
-                            <div className="avatar">
-                                <img src="./images/avatar/avatar5.png" alt="avatar" className="avatar-img"/>
-                                <div className="avatar-info">
-                                    <div className="name">Jenna Ortega</div>
-                                    <div className="role">Senior Accountant di <bold>Gojek</bold></div>
-                                </div>
-                            </div>
-                        <div className="rating-price">
-                            <div className="rating">
-                                <span className="star">★★★☆☆</span>
-                                <span className="rating">3.5</span>
-                                <span className="count">(86)</span>
-                            </div>
-                            <div className="price">Rp. 300K</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="course-grid">
-                <div className="course-card">
-                    <img src="./images/kelas/kelas6.png" alt="course" className="course-img"/>
-                    <div className="content">
-                            <h6 className="title">Big 4 Auditor Financial Analyst</h6>
-                            <div className="avatar">
-                                <img src="./images/avatar/avatar6.png" alt="avatar" className="avatar-img"/>
-                                <div className="avatar-info">
-                                    <div className="name">Jenna Ortega</div>
-                                    <div className="role">Senior Accountant di <bold>Gojek</bold></div>
-                                </div>
-                            </div>
-                        <div className="rating-price">
-                            <div className="rating">
-                                <span className="star">★★★☆☆</span>
-                                <span className="rating">3.5</span>
-                                <span className="count">(86)</span>
-                            </div>
-                            <div className="price">Rp. 300K</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="course-grid">
-                <div className="course-card">
-                    <img src="./images/kelas/kelas7.png" alt="course" className="course-img"/>
-                    <div className="content">
-                            <h6 className="title">Big 4 Auditor Financial Analyst</h6>
-                            <div className="avatar">
-                                <img src="./images/avatar/avatar7.png" alt="avatar" className="avatar-img"/>
-                                <div className="avatar-info">
-                                    <div className="name">Jenna Ortega</div>
-                                    <div className="role">Senior Accountant di <bold>Gojek</bold></div>
-                                </div>
-                            </div>
-                        <div className="rating-price">
-                            <div className="rating">
-                                <span className="star">★★★☆☆</span>
-                                <span className="rating">3.5</span>
-                                <span className="count">(86)</span>
-                            </div>
-                            <div className="price">Rp. 300K</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="course-grid">
-                <div className="course-card">
-                    <img src="./images/kelas/kelas8.png" alt="course" className="course-img"/>
-                    <div className="content">
-                            <h6 className="title">Big 4 Auditor Financial Analyst</h6>
-                            <div className="avatar">
-                                <img src="./images/avatar/avatar8.png" alt="avatar" className="avatar-img"/>
-                                <div className="avatar-info">
-                                    <div className="name">Jenna Ortega</div>
-                                    <div className="role">Senior Accountant di <bold>Gojek</bold></div>
-                                </div>
-                            </div>
-                        <div className="rating-price">
-                            <div className="rating">
-                                <span className="star">★★★☆☆</span>
-                                <span className="rating">3.5</span>
-                                <span className="count">(86)</span>
-                            </div>
-                            <div className="price">Rp. 300K</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="course-grid">
-                <div className="course-card">
-                    <img src="./images/kelas/kelas9.png" alt="course" className="course-img"/>
-                    <div className="content">
-                            <h6 className="title">Big 4 Auditor Financial Analyst</h6>
-                            <div className="avatar">
-                                <img src="./images/avatar/avatar9.png" alt="avatar" className="avatar-img"/>
-                                <div className="avatar-info">
-                                    <div className="name">Jenna Ortega</div>
-                                    <div className="role">Senior Accountant di <bold>Gojek</bold></div>
-                                </div>
-                            </div>
-                        <div className="rating-price">
-                            <div className="rating">
-                                <span className="star">★★★☆☆</span>
-                                <span className="rating">3.5</span>
-                                <span className="count">(86)</span>
-                            </div>
-                            <div className="price">Rp. 300K</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+            </section>
         <section className="news-letter">
             <h5>NEWSLETTER</h5>
             <h3>Mau Belajar Lebih Banyak?</h3>
