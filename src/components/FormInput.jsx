@@ -13,6 +13,7 @@ export default function FormInput({ id, label, type = "text", register, errors, 
                 <input
                    type={isPassword && show ? "text" : type}
                    id={id}
+                   name={id}
                    {...register(id, { required: `${label} wajib diisi`, validate })}
                 />
                 {isPassword && (

@@ -9,6 +9,11 @@ const Header = () => {
             <div className="user-menu">
                 <Link to="Kategori">Kategori</Link>
                 <img src="./public/images/user.png" alt="user" className="user-img" />
+                <button onClick={() => {
+                    localStorage.Storage.removeItem("isLoggedIn");
+                    window.location.href = "/login";
+                }}
+                >Logout</button>
             </div>
         </header>
     )

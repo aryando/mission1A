@@ -1,8 +1,8 @@
 import Header from "../components/Header";
-import FormInput from "../components/FormInput";
 import { useForm } from "react-hook-form";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import FormInput from "../components/FormInput";
 export default function Login () {
     const navigate = useNavigate();
 
@@ -11,10 +11,25 @@ export default function Login () {
         handleSubmit,
         formState: { errors },
     } = useForm();
-
-    navigate("/Beranda");
     
-    const onSubmit = (data) => console.log(data);
+    const onSubmit = (data) => {
+        const accounts = JSON.parse(localStorage.getItem("accounts")) || [];
+        const akun = accounts.find(
+            (acc) => acc.email === data.email && acc.password === data.password);
+            console.log("Input dari form:", data);
+            console.log("Akun tersimpan:", accounts);
+            if (!akun) {
+                alert("email atau kata sandi dalah!");
+                return;
+            }
+
+            localStorage.setItem("isLogin", "true");
+            localStorage.setItem("user", JSON.stringify(akun));
+            alert("Login berhasil!");
+            navigate("/beranda");
+
+        
+    }
     return (
         <>
         <Header />
@@ -25,14 +40,21 @@ export default function Login () {
                     <p>Yuk, lanjutin belajarmu di videobelajar.</p>
                 </div>
                 <div className="form-group">
-                    <div className="form">
-                        <label htmlFor="email">E-Mail <span className="red-star">*</span></label>
-                        <input type="email" id="email" name="email" required placeholder="Masukan E-Mail Anda" />
-                    </div>
-                    <div className="form">
-                        <label htmlFor="password">Kata Sandi <span className="red-star">*</span></label>
-                        <input type="password" id="password" name="password" required placeholder="Masukan Kata Sandi Anda" />
-                    </div>
+                        <FormInput
+                            id="email"
+                            label="E-Mail"
+                            type="email"
+                            register={register}
+                            errors={errors}
+                        /> 
+
+                        <FormInput
+                            id="password"
+                            label="Kata Sandi"
+                            type="password"
+                            register={register}
+                            errors={errors}
+                        />
                     <div className="forgot-password">
                         <button type="button" className="forgot-password">Lupa Password?</button>
                     </div>

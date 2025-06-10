@@ -1,16 +1,40 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Login";
+import Login from "./pages/Login";
 import Beranda from "./pages/Beranda";
 import Register from "./pages/Register";
+import ProtectedRoute from "./components/ProtectedRoute";
+import GuestRoute from "./components/GuestRoute";
+import { Navigate } from "react-router-dom";
 
 
 export default function AppRoutes() {
     return (
         <Router>
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/Beranda" element={<Beranda />} />
-                <Route path="/Register" element={<Register />} />
+                <Route
+                    path="/"
+                    element={<Navigate to="login" replace />} />
+                <Route 
+                    path="/beranda"
+                    element={<ProtectedRoute>
+                                <Beranda />
+                            </ProtectedRoute>
+                    } 
+                />
+                <Route 
+                    path="/login" 
+                    element={<GuestRoute>
+                                <Login />
+                            </GuestRoute>
+                    }
+                />
+                <Route 
+                    path="/register" 
+                    element={<GuestRoute>
+                                <Register />
+                            </GuestRoute>
+                    } 
+                />
             </Routes>
         </Router>
     )
