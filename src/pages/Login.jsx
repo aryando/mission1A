@@ -1,6 +1,5 @@
 import Header from "../components/Header";
 import { useForm } from "react-hook-form";
-import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import FormInput from "../components/FormInput";
 export default function Login () {
