@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 export default function FormInput({ id, label, type = "text", register, errors, validate }) {
     const [show, setShow] = useState(false);
@@ -31,3 +32,12 @@ export default function FormInput({ id, label, type = "text", register, errors, 
         </div>
     )
 }
+
+FormInput.propTypes = {
+    id: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    type: PropTypes.string,
+    register: PropTypes.func.isRequired,
+    errors: PropTypes.object.isRequired,
+    validate: PropTypes.func,
+};

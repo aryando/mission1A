@@ -278,9 +278,6 @@ input[type="number"],
     margin: 0 1rem;
     margin-bottom: 2rem;
     padding: 0rem 1rem;
-    /* display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1rem; */
 }
 .courses h3 {
     font-size: 1rem;
@@ -328,12 +325,6 @@ nav {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }
-.course-grid {
-    /* display: grid;
-    grid-template-columns: auto auto auto;
-    gap: 1rem; */
-}
-
 
 .course-img {
     width: 82px;
@@ -380,7 +371,6 @@ nav {
 }
 .rating-price {
     position: relative;
-    /* left: 2rem; */
     bottom: 0.5rem;
 }
 .rating {
@@ -547,4 +537,17 @@ footer {
         width: 40%;
         margin: 6rem auto;
     }
+    .hero-section {
+        width:auto;
+
+    }
+    .course-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    }
+    .course-card {
+        margin: auto;
+    }
+
     }

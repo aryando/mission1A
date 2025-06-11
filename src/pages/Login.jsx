@@ -26,6 +26,8 @@ export default function Login () {
             localStorage.setItem("isLogin", "true");
             localStorage.setItem("user", JSON.stringify(akun));
             alert("Login berhasil!");
+            console.log("navigate dipanggil");
+
             navigate("/beranda");
 
         

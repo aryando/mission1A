@@ -4,6 +4,7 @@ import CourseCard from "../components/CourseCard";
 export default function Beranda() {
     const courses = [
         {
+            id: 1,
             image: "./images/kelas/kelas1.png",
             title: "Big 4 Auditor Financial Analyst",
             avatar: "./images/avatar/avatar1.png",
@@ -13,6 +14,7 @@ export default function Beranda() {
             price: "Rp. 300K"
         },
         {
+            id: 2,
             image: "./images/kelas/kelas2.png",
             title: "Big 4 Auditor Financial Analyst",
             avatar: "./images/avatar/avatar2.png",
@@ -22,6 +24,7 @@ export default function Beranda() {
             price: "Rp. 300K"
         },
         {
+            id: 3,
             image: "./images/kelas/kelas3.png",
             title: "Big 4 Auditor Financial Analyst",
             avatar: "./images/avatar/avatar3.png",
@@ -31,6 +34,7 @@ export default function Beranda() {
             price: "Rp. 300K"
         },
         {
+            id: 4,
             image: "./images/kelas/kelas4.png",
             title: "Big 4 Auditor Financial Analyst",
             avatar: "./images/avatar/avatar4.png",
@@ -40,6 +44,7 @@ export default function Beranda() {
             price: "Rp. 300K"
         },
         {
+            id: 5,
             image: "./images/kelas/kelas5.png",
             title: "Big 4 Auditor Financial Analyst",
             avatar: "./images/avatar/avatar5.png",
@@ -49,6 +54,7 @@ export default function Beranda() {
             price: "Rp. 300K"
         },
         {
+            id: 6,
             image: "./images/kelas/kelas6.png",
             title: "Big 4 Auditor Financial Analyst",
             avatar: "./images/avatar/avatar6.png",
@@ -58,6 +64,7 @@ export default function Beranda() {
             price: "Rp. 300K"
         },
         {
+            id: 7,
             image: "./images/kelas/kelas7.png",
             title: "Big 4 Auditor Financial Analyst",
             avatar: "./images/avatar/avatar7.png",
@@ -67,6 +74,7 @@ export default function Beranda() {
             price: "Rp. 300K"
         },
         {
+            id: 8,
             image: "./images/kelas/kelas8.png",
             title: "Big 4 Auditor Financial Analyst",
             avatar: "./images/avatar/avatar8.png",
@@ -76,6 +84,7 @@ export default function Beranda() {
             price: "Rp. 300K"
         },
         {
+            id: 9,
             image: "./images/kelas/kelas9.png",
             title: "Big 4 Auditor Financial Analyst",
             avatar: "./images/avatar/avatar9.png",
@@ -87,7 +96,7 @@ export default function Beranda() {
     ]
     return (
         <>
-        <Header />
+        <Header  />
         <main>
             <section className="hero-section">
                 <h1>Revolusi Pembelajaran: Temukan Ilmu Baru melalui Platform Interaktif!</h1>
@@ -105,8 +114,8 @@ export default function Beranda() {
                     <button type="button" className="category-link">Bisnis</button>
                 </nav>
                 <div className="course-grid">
-                    {courses.map((course, index) => (
-                        <CourseCard key={index} {...course}/>
+                    {courses.map((course) => (
+                        <CourseCard key={course.id} {...course}/>
                     ))}
                 </div>
             </section>

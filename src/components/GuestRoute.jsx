@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 export default function GuestRoute({ children }) {
     const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-
+    
     return !isLoggedIn ? children : <Navigate to="/beranda" />;
 }
 

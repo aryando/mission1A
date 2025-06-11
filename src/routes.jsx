@@ -16,10 +16,8 @@ export default function AppRoutes() {
                     element={<Navigate to="login" replace />} />
                 <Route 
                     path="/beranda"
-                    element={<ProtectedRoute>
-                                <Beranda />
-                            </ProtectedRoute>
-                    } 
+                    element=
+                                {<Beranda/>}
                 />
                 <Route 
                     path="/login" 
